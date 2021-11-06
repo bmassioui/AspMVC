@@ -26,7 +26,6 @@ namespace TvShowsWebApp.Models
         [Display(Name = "Imdb Link")]
         public string ImdbUrl { get; set; }
 
-        [Required]
         [DataType(DataType.ImageUrl)]
         [Display(Name = "Poster")]
         public string ImageUrl { get; set; }
