@@ -1,8 +1,10 @@
-﻿namespace WebApp.Models
+﻿using System;
+
+namespace TvShowsWebApp.Models
 {
     public class TvShow
     {
-        public int Id { get; set; }
+        public Guid Id { get; set; }
 
         public string Title { get; set; }
 

@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
-    <UserSecretsId>aspnet-WebApp-15D09FE0-A750-48C0-AFB3-8C51A8559EBB</UserSecretsId>
+    <UserSecretsId>aspnet-TvShowsWebApp-92B6219D-A85C-4A7B-94D7-5FDCF08C8E05</UserSecretsId>
     <CopyRefAssembliesToPublishDirectory>false</CopyRefAssembliesToPublishDirectory>
   </PropertyGroup>
 
