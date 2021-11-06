@@ -143,7 +143,8 @@ namespace TvShowsWebApp.Controllers
         public async Task<IActionResult> DeleteConfirmed(Guid id)
         {
             var tvShow = await _context.TvShow.FindAsync(id);
-            _context.TvShow.Remove(tvShow);
+            tvShow.IsDeleted = true;
+
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }

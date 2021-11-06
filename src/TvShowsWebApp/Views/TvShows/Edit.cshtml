@@ -1,12 +1,12 @@
 ﻿@model TvShowsWebApp.Models.TvShow
 
 @{
-    ViewData["Title"] = "Edit";
+    ViewData["Title"] = "Edit TV Show";
 }
 
-<h1>Edit</h1>
+<h1>@ViewData["Title"]</h1>
 
-<h4>TvShow</h4>
+<h4>TV Show</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
@@ -20,7 +20,7 @@
             </div>
             <div class="form-group">
                 <label asp-for="Genre" class="control-label"></label>
-                <select asp-for="Genre" class="form-control"></select>
+                <select asp-for="Genre" class="form-control" asp-items="Html.GetEnumSelectList<Genre>()"></select>
                 <span asp-validation-for="Genre" class="text-danger"></span>
             </div>
             <div class="form-group">
@@ -38,11 +38,12 @@
                 <input asp-for="ImageUrl" class="form-control" />
                 <span asp-validation-for="ImageUrl" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="IsDeleted" class="control-label"></label>
-                <input asp-for="IsDeleted" class="form-control" />
+            <div class="form-check">
+                <input type="checkbox" asp-for="IsDeleted" class="form-check-input" id="IsDeletedCheckBox">
+                <label class="form-check-label" for="IsDeletedCheckBox">Mark as deleted.</label>
                 <span asp-validation-for="IsDeleted" class="text-danger"></span>
             </div>
+            <br />
             <div class="form-group">
                 <input type="submit" value="Save" class="btn btn-primary" />
             </div>

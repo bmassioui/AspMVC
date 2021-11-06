@@ -1,10 +1,10 @@
 ﻿@model IEnumerable<TvShowsWebApp.Models.TvShow>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "List of TV Show";
 }
 
-<h1>Index</h1>
+<h1>@ViewData["Title"]</h1>
 
 <p>
     <a asp-action="Create">Create New</a>
@@ -30,7 +30,7 @@
             <th>
                 @Html.DisplayNameFor(model => model.IsDeleted)
             </th>
-            <th>@Html.Label("Actions")</th>
+            <th>@Html.DisplayName("Actions")</th>
         </tr>
     </thead>
     <tbody>
@@ -39,7 +39,7 @@
             <tr>
                 <td>
                     @if (string.IsNullOrWhiteSpace(item.ImageUrl)) return;
-                    <img src="@Url.Content(item.ImageUrl)" alt="Shows poster" class="rounded" width="200" height="200" />
+                    <img src="@Url.Content(item.ImageUrl)" title="TV Show poster" alt="TV Show poster" class="rounded" width="100" height="100" />
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.Title)
@@ -54,7 +54,7 @@
                     <a href="@item.ImdbUrl" title="Internet Movie Database" target="_blank">@item.Title</a>
                 </td>
                 <td>
-                    @Html.CheckBox("IsDeletedCheckBox", item.IsDeleted)
+                    @Html.CheckBox("IsDeletedCheckBox", item.IsDeleted, new { @disabled = "true" })
                 </td>
                 <td>
                     <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
