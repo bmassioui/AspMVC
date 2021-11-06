@@ -59,7 +59,7 @@ namespace TvShowsWebApp
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Home}/{action=Index}/{id?}");
+                    pattern: "{controller=TvShows}/{action=Index}/{id?}");
                 endpoints.MapRazorPages();
             });
         }
